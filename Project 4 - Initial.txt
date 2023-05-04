@@ -1,0 +1,1 @@
+There's no initial project for #4 because we created the vue project from zero using the vue cli

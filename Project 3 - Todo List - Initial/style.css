@@ -1,0 +1,144 @@
+body {
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+}
+
+main {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	flex-wrap: wrap;
+	padding-top: 60px;
+}
+
+main .todo-list input {
+	box-sizing: border-box;
+	height: 28px;
+	border-radius: 0.25rem;
+	width: 80%;
+	border: 1px solid lightgrey;
+	margin-top: 32px;
+	box-shadow: 0 1px 7px rgba(0, 0, 0, 0.2);
+}
+
+main button {
+	background-color: transparent;
+	cursor: pointer;
+	box-sizing: border-box;
+	height: 28px;
+	border-radius: 0.25rem;
+	color: #fff;
+	border: none;
+	box-shadow: 0 3px 4px rgba(0, 0, 0, 0.4), inset -5px -5px 7px -3px rgba(0, 0, 0, 0.4);
+	transition: all 0.2s;
+}
+
+main button:hover {
+	opacity: 0.8;
+	transform: translateY(-1px);
+}
+
+main button:active {
+	opacity: 0.8;
+	transform: translateY(1px);
+}
+
+main button.add {
+	background-color: #007bff;
+	margin-left: 2px;
+	margin-top: 10px;
+}
+
+main button.save {
+	background-color: #00e204;
+	margin-left: 2px;
+	margin-top: 10px;
+}
+
+main button.load {
+	background-color: #636f68;
+	margin-left: 2px;
+}
+
+main button.clear {
+	background-color: #dc3545;
+	display: block;
+	margin: auto;
+}
+
+main button:focus {
+	outline: 0;
+}
+
+button:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+button:disabled:hover {
+	opacity: 0.5;
+	transform: none;
+}
+
+main > section.todo-list h3 {
+	text-align: center;
+	margin-top: 24px;
+	width: 100%;
+}
+
+main > section.todo-list {
+	flex-wrap: wrap;
+	border: 1px solid lightgrey;
+	background-color: rgb(248, 248, 248);
+	padding: 20px;
+	max-width: 500px;
+	min-width: 300px;
+	text-align: center;
+	border-radius: 0.25rem;
+	box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.09);
+}
+
+main .all-todos .single-todo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+main .all-todos .single-todo p {
+	margin: 12px 0;
+	cursor: pointer;
+}
+
+main .all-todos .single-todo.done p {
+	text-decoration: line-through;
+}
+
+main .all-todos .single-todo button.remove {
+	width: 12px;
+	height: 12px;
+	border: none;
+	background: transparent url('img/remove.png') no-repeat center;
+	background-size: contain;
+	cursor: pointer;
+	margin-left: 8px;
+}
+
+main > section.todo-list button.clear {
+	margin-top: 24px;
+}
+
+div.instructions {
+	font-size: 11px;
+	margin-top: 40px;
+	color: grey;
+}
+
+div.instructions ul {
+	list-style: inside;
+	text-align: center;
+	padding: 0;
+}
+
+div.instructions ul li {
+	margin: 4px auto;
+}

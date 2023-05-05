@@ -25,15 +25,13 @@
 					</div>
 				</div>
 
-				<button class="clear" @click="clearToDo()">Clear All</button>
+				<button class="clear" @click="clearToDo()" v-if="toDoList.length">Clear All</button>
 
 				<input type="text" placeholder="Add new to-do" name="toDo" v-model="newToDo.toDo" />
 				<button class="add" @click="addToDo()" :disabled="!!!newToDo.toDo">Add</button>
 
 				<button class="save" @click="save()" :disabled="sameList()">Save</button>
 				<button class="load" @click="load()">Load</button>
-
-				<p>{{sameList()}}</p>
 
 				<div class="instructions">
 					Instructions:

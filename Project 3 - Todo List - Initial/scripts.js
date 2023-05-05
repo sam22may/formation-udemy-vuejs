@@ -35,29 +35,47 @@ const handlingForms = {
 	},
 	methods: {
 		addToDo() {
-			//console.log('this.newToDo', !!!this.newToDo)
-			console.log('this.newToDo.toDo', this.newToDo.toDo)
+			console.log(this.newToDo)
 			if (!!!this.newToDo || !!!this.newToDo.toDo) return
-			console.log('ucu')
+			console.log('Asdf')
 			this.toDoList.push(this.newToDo)
+			console.log('after', this.toDoList)
 			this.newToDo = {}
 		},
 		clearToDo() {
 			this.toDoList = []
 		},
 		save() {
+			console.log('save')
+			if (this.sameList()) return
 			localStorage.setItem('toDoList', JSON.stringify(this.toDoList))
 		},
 		load() {
-			this.toDoList = JSON.parse(localStorage.getItem('toDoList'))
+			console.log('load')
+			this.toDoList = localStorage.getItem('toDoList') ? JSON.parse(localStorage.getItem('toDoList')) : this.toDoList
 		},
 		sameList() {
-			if (this.toDoList.length === 0) return true
+			//if (this.toDoList.length === 0) return true
 
 			const savedList = JSON.parse(localStorage.getItem('toDoList'))
 
+			console.log('savedList', savedList)
+
+			if (!!!savedList) return false
+
 			return compareComplexObjArrays(this.toDoList, savedList)
 		}
+	},
+	beforeCreate() {
+		console.log('beforeCreate')
+	},
+	created() {
+		console.log('created')
+		this.load()
+	},
+	updated() {
+		console.log('updated')
+		//this.save()
 	}
 }
 
